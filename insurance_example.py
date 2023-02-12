@@ -153,25 +153,29 @@ print(classification_report(y_test, pred))'''
 
 
 import pandas as pd
-import seaborn as sns
+import seaborn as sb
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
+import matplotlib.pyplot as plt
 
-# Charger le jeu de données dans un dataframe
-df = pd.read_excel("C:\\wamp64\\www\\Fire\\forestfires3.xlsx")
-matrix_coor=df.corr()
-sns.heatmap(df.corr(),cmap="Blues" ,fmt=".1f")
+# Read the xlsx file into a pandas dataframe
+excel = pd.read_excel('C:\\wamp64\\www\\Fire\\forestfires3.xlsx')
+# df = pd.read_excel('C:\\wamp64\\www\\Fire\\AmazonForestFires.xlsx')
+
+
+excel.hist()
+
 # Séparer les données en entrées (X) et sorties (y)
-X = df.drop("area", axis=1)
-y = df["area"]
+# X = df.drop("area", axis=1)
+# y = df["area"]
 
 # # Diviser les données en ensembles d'entraînement et de test
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 # # Entraîner un modèle de régression logistique sur les données d'entraînement
-model = LogisticRegression()
-model.fit(X_train, y_train)
+# model = LogisticRegression()
+# model.fit(X_train, y_train)
 
 # # Prédire les résultats de test
 # y_pred = model.predict(X_test)
