@@ -64,7 +64,3 @@ pred_table = pd.DataFrame({'Actual value (Test)': y_test, 'Predicted value': y_p
 # print(pred_table)
 # We can have the percentage of the same values between our 2 arrays
 print("\nPercentage of accurate value between prediction and actual values :",round((np.sum(y_test == y_pred_rounded)/len(y_test))*100,2),"%")
-
-# x_new=np.array([1,30,10]).reshape(-1,1)
-# y_new = fire_model.predict(x_new)
-# print("Result ",y_new)
